@@ -1,7 +1,7 @@
 FROM debian:latest
 
 ####installing [software-properties-common] so that we can use [apt-add-repository] to add the repository [ppa:webupd8team/java] form which we install Java8
-RUN apt-get install software-properties-common -y
+#RUN apt-get install software-properties-common -y
 RUN apt-add-repository ppa:webupd8team/java -y
 RUN apt-get update -y
  
