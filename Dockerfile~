@@ -10,10 +10,10 @@ RUN apt-get update -qqy \
   && add-apt-repository ppa:webupd8team/java \
   && apt-get update -qqy \
   && apt-get -qqy install \
-    oracle-java9-installer \
-  && sed -i 's/securerandom.source=file:\/dev\/urandom/securerandom.source=file:\/dev\/.\/urandom/g' \
-       /usr/lib/jvm/java-9-oracle/conf/security/java.security \
-  && sed -i 's/securerandom.source=file:\/dev\/random/securerandom.source=file:\/dev\/.\/urandom/g' \
-       /usr/lib/jvm/java-9-oracle/conf/security/java.security \
-  && rm -rf /var/lib/apt/lists/*
+    oracle-java9-installer
+RUN sed -i 's/securerandom.source=file:\/dev\/urandom/securerandom.source=file:\/dev\/.\/urandom/g' \
+       /usr/lib/jvm/java-9-oracle/conf/security/java.security
+RUN sed -i 's/securerandom.source=file:\/dev\/random/securerandom.source=file:\/dev\/.\/urandom/g' \
+       /usr/lib/jvm/java-9-oracle/conf/security/java.security
+RUN rm -rf /var/lib/apt/lists/*
 
