@@ -8,5 +8,5 @@ RUN apt-get update
 RUN apt-get install oracle-java8-installer
 
 RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
-RUN apt-get install oracle-java8-set-default
+RUN apt-get -y install oracle-java8-set-default
 
